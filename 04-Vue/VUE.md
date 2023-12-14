@@ -4,6 +4,12 @@
 
 ### 模板语法
 
+文本插值：{{}}
+
+指令 Directives:指令是带有 `v-` 前缀的特殊 attribute。
+
+v-on:submit.prevent="onSubmit"(name-argument-modifiers-value)
+
 ### 响应式基础
 
 选项式中：
@@ -79,11 +85,32 @@ inject 将祖先组件发射的数据，注入到当前组件中(接收)
 
 ### 单文本组件
 
+一个 Vue 单文件组件 (SFC)，通常使用 `*.vue` 作为文件扩展名，它是一种使用了类似 HTML 语法的自定义文件格式，用于定义 Vue 组件。每一个 `*.vue` 文件都由三种顶层语言块构成：`<template>`、`<script>` 和 `<style>`
+
+<script setup> 是在单文件组件 (SFC) 中使用组合式 API 的编译时语法糖。
+
 ### 工具链
+
+[Vite](https://cn.vitejs.dev/) 是一个轻量级的、速度极快的构建工具，对 Vue SFC 提供第一优先级支持
 
 ### 路由
 
+服务端路由指的是服务器根据用户访问的 URL 路径返回不同的响应结果。
+
+一个客户端路由器的职责就是利用诸如 [History API](https://developer.mozilla.org/en-US/docs/Web/API/History) 或是 [`hashchange` 事件](https://developer.mozilla.org/en-US/docs/Web/API/Window/hashchange_event)这样的浏览器 API 来管理应用当前应该渲染的视图。
+
 ### 状态管理
+
+**`Vuex`** 
+
+**`Pinia`**
 
 ### 服务端渲染
 
+服务端渲染(ssr)
+
+与客户端的单页应用 (SPA) 相比，SSR 的优势主要在于：
+
+- **更快的首屏加载**：这一点在慢网速或者运行缓慢的设备上尤为重要。服务端渲染的 HTML 无需等到所有的 JavaScript 都下载并执行完成之后才显示，所以你的用户将会更快地看到完整渲染的页面。除此之外，数据获取过程在首次访问时在服务端完成，相比于从客户端获取，可能有更快的数据库连接。这通常可以带来更高的[核心 Web 指标](https://web.dev/vitals/)评分、更好的用户体验，而对于那些“首屏加载速度与转化率直接相关”的应用来说，这点可能至关重要。
+- **统一的心智模型**：你可以使用相同的语言以及相同的声明式、面向组件的心智模型来开发整个应用，而不需要在后端模板系统和前端框架之间来回切换。
+- **更好的 SEO**：搜索引擎爬虫可以直接看到完全渲染的页面。
